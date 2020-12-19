@@ -14,6 +14,7 @@ import com.android.memorynotes.R
 import com.android.data.framework.viewmodels.NoteListViewModel
 import com.android.memorynotes.presentation.adapter.NoteListAdapter
 import com.android.memorynotes.presentation.common.ListActionListener
+import com.android.memorynotes.presentation.common.Navigation
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ListFragment : Fragment(), ListActionListener {
@@ -45,7 +46,7 @@ class ListFragment : Fragment(), ListActionListener {
             adapter = noteListAdapter
         }
 
-        addNoteBT.setOnClickListener { v ->  gotoNoteDetails(view = v)}
+        addNoteBT.setOnClickListener { v ->  Navigation.gotoNoteDetails(view = v)}
 
         viewModel.noteList.observe(requireActivity(), { notes ->
             loadingView.visibility = View.GONE
@@ -60,13 +61,8 @@ class ListFragment : Fragment(), ListActionListener {
         viewModel.getNotes()
     }
 
-    private fun gotoNoteDetails(id: Long = 0L, view: View) {
-        val action = ListFragmentDirections.actionListFragmentToNoteFragment()
-        action.noteId = id
-        view.findNavController().navigate(action)
-    }
 
     override fun onClickListItem(id: Long, view: View) {
-        gotoNoteDetails(id, view)
+        Navigation.gotoNoteDetails(id, view)
     }
 }

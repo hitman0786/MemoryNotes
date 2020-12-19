@@ -14,6 +14,7 @@ import com.android.core.model.Note
 import com.android.memorynotes.R
 import com.android.data.framework.util.hideKeyboard
 import com.android.data.framework.viewmodels.NoteViewModel
+import com.android.memorynotes.presentation.common.Navigation
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class NoteFragment : Fragment() {
@@ -62,7 +63,7 @@ class NoteFragment : Fragment() {
                 }
                 viewModel.saveNote(currentNote)
             } else {
-                it.findNavController().popBackStack()
+                Navigation.backToPreviousScreen(it)
             }
         }
 
@@ -74,7 +75,7 @@ class NoteFragment : Fragment() {
             if(it) {
                 Toast.makeText(context, "Data saved successfully!", Toast.LENGTH_SHORT).show()
                 view.hideKeyboard()
-                view.findNavController().popBackStack()
+                Navigation.backToPreviousScreen(view)
             }else {
                 Toast.makeText(context, "Something went wrong, please try again!", Toast.LENGTH_SHORT).show()
             }

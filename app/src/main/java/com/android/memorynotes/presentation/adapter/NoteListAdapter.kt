@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.android.core.model.Note
+
 import com.android.memorynotes.R
 import com.android.memorynotes.presentation.common.ListActionListener
 import com.google.android.material.card.MaterialCardView
