@@ -1,0 +1,4 @@
+include ':datasource'
+include ':domain'
+include ':app'
+rootProject.name = "MemoryNotes"

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MemoryNotes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_note">add note</string>
+    <string name="tilte">Tilte</string>
+    <string name="content">Content</string>
+    <string name="save_content">save content</string>
+    <string name="delete_note">Delete Note</string>
+</resources>
